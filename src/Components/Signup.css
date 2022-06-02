@@ -4,9 +4,15 @@
 }
 
 .signupCard{
-    width: 25vw;
+    width: 28vw;
+    /* height:13vw; */
     margin-top:2rem;
 }
 .insta-logo img{
-    width:85%;
+    width:60%;
+    height:4rem;
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center; */
+    margin-left: 17%;
 }
