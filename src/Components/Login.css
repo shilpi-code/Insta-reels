@@ -1,0 +1,29 @@
+.Loginwrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.LoginCard{
+    width: 28vw;
+    margin-top:6rem;
+    padding-left: 32px;
+    padding-top: 20px;
+}
+.insta-logo img{
+    width:60%;
+    height:4rem;
+    margin-left: 17%;
+}
+.imgcar{
+    margin-top: 4%;
+    width: 23rem;
+    height:30rem;
+    position: relative;
+}
+.car{
+    height: 352px;
+    width: 207px;
+    position: absolute;
+    left: 113px;
+    top: 78px;
+}
