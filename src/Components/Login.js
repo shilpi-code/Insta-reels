@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useContext,useState } from 'react';
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -12,6 +13,8 @@ import Alert from "@mui/material/Alert";
 import TextField from "@mui/material/TextField";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
 import bg from '../Assets/instamob.png'
 import img1 from '../Assets/img1.jpg';
 import img2 from '../Assets/img2.jpg';
@@ -22,6 +25,8 @@ import img5 from '../Assets/img5.jpg';
 import "./Login.css";
 
 export default function Login() {
+  const store = useContext(AuthContext)
+  console.log(store);
   const useStyles = makeStyles({
     text1: {
       color: "grey",
@@ -36,6 +41,14 @@ export default function Login() {
     },
   });
   const classes = useStyles();
+
+  const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const [error,setError] = useState('');
+    const [loading,setLoading] = useState(false);
+    const history = useNavigate();
+    const {login} = useContext(AuthContext);
+
   return (
     <div className="Loginwrapper">
       <div className="imgcar" style={{backgroundImage:'url('+bg+')',backgroundSize:'cover'}}>
@@ -80,6 +93,8 @@ export default function Login() {
               margin="dense"
               size="small"
               variant="outlined"
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
             />
             <TextField
               id="outlined-basic"
@@ -88,6 +103,8 @@ export default function Login() {
               margin="dense"
               size="small"
               variant="outlined"
+              value={password}
+              onChange={(e)=>setPassword(e.target.value)}
             />
             <Typography className={classes.text2} color="primary" variant="subtitle1">
               Forget Password ?
