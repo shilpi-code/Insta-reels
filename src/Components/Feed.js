@@ -1,6 +1,7 @@
 import React,{useContext,useEffect,useState} from 'react'
 import { AuthContext } from '../Context/AuthContext'
 import UploadFile from './UploadFile'
+import Posts from './Posts'
 import {database} from '../firebase'
 
 function Feed() {
@@ -19,6 +20,7 @@ function Feed() {
         <button onClick={logout}>Log out</button>
     </div>
     <UploadFile user={userData} />
+    <Posts userData={userData} />
     </div>
   )
 }
