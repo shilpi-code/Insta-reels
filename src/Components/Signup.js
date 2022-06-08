@@ -49,7 +49,6 @@ export default function Signup() {
       setError('')
             setLoading(true)
             let userObj = await signup(email,password)
-            console.log("userobj"+ " " + userObj)
             let uid = userObj.user.uid
             const uploadTask = storage.ref(`/users/${uid}/ProfileImage`).put(file);
             uploadTask.on('state_changed',fn1,fn2,fn3);
