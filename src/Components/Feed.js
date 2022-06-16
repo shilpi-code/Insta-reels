@@ -2,6 +2,7 @@ import React,{useContext,useEffect,useState} from 'react'
 import { AuthContext } from '../Context/AuthContext'
 import UploadFile from './UploadFile'
 import Posts from './Posts'
+import Navbar from './Navbar'
 import {database} from '../firebase'
 
 function Feed() {
@@ -14,14 +15,17 @@ function Feed() {
       return ()=> {unsub()}
   },[user])
   return (
+    <>
+    <Navbar userData={userData} />
     <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
-    <div className="comp" style={{width:'50%'}}>
+    {/* <div className="comp" style={{width:'50%'}}>
         <h1>Welcome to feed</h1>
         <button onClick={logout}>Log out</button>
-    </div>
+    </div> */}
     <UploadFile user={userData} />
     <Posts userData={userData} />
     </div>
+    </>
   )
 }
 
